@@ -55,8 +55,12 @@
         {% endif %}
     </div>
     <div class="container">
-        <a class="btn btn-dark" href="/admin" role="button">Painel de Controle</a>
-        <a class="btn btn-dark" href="/produto" role="button">Cadastrar Produto</a>
+        {% if user.is_anonymous %}
+            <a class="btn btn-dark" href="/admin" role="button">Login</a>
+        {% else %}
+            <a class="btn btn-dark" href="/produto" role="button">Cadastrar Produto</a>
+            <a class="btn btn-dark" href="/admin" role="button">Painel de Controle</a>
+        {% endif %}
     </div>
 
 
